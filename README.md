@@ -2,7 +2,7 @@
 
 An interactive dashboard that screens 25 listed Indian companies for private-equity take-private feasibility, then models a full 5-year LBO for the shortlisted names.
 
-**Live demo:** https://YOURUSERNAME.github.io/lbo-screening-engine/
+**Live demo:** https://amankhandelwal3011.github.io/lbo-screening-engine/
 
 ## What it does
 
