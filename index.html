@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LBO Screening Engine - India Take-Private Candidates</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e1a2b;--pn:#15263d;--pn2:#1c3250;--ink:#e8eef6;--mu:#93a4bb;--ac:#e3b04b;--gr:#4cb782;--rd:#d9615a;--ln:#2a4062;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root:not([data-theme=dark]){}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 "IBM Plex Sans",system-ui,sans-serif;font-variant-numeric:tabular-nums}
+h1,h2{font-family:"Source Serif 4",Georgia,serif;margin:0}h1{font-size:24px}h2{font-size:19px;margin:22px 0 10px}
+header{padding:18px 20px 0;max-width:1180px;margin:auto}header p{color:var(--mu);margin:4px 0 12px}
+nav{display:flex;gap:4px;overflow-x:auto;border-bottom:1px solid var(--ln);max-width:1180px;margin:auto;padding:0 20px}
+nav button{background:none;border:0;color:var(--mu);padding:10px 14px;font:inherit;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap}
+nav button.on{color:var(--ac);border-color:var(--ac)}nav button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--ac)}
+main{max-width:1180px;margin:auto;padding:6px 20px 40px}
+.kp{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:14px 0}
+.k{background:var(--pn);border:1px solid var(--ln);border-radius:6px;padding:12px 14px}.k b{display:block;font-size:22px;font-family:"Source Serif 4",serif}.k span{color:var(--mu);font-size:12px}
+.as{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
+label{display:flex;flex-direction:column;font-size:12px;color:var(--mu);gap:3px}
+input,select{background:var(--pn2);border:1px solid var(--ln);color:var(--ink);padding:6px 8px;border-radius:4px;font:inherit}
+.w{overflow-x:auto}table{border-collapse:collapse;width:100%;background:var(--pn)}th,td{padding:7px 10px;border-bottom:1px solid var(--ln);text-align:right;white-space:nowrap}
+th{color:var(--mu);font-weight:500;font-size:12px}th:first-child,td:first-child{text-align:left}
+.g{color:var(--gr)}.r{color:var(--rd)}.a{color:var(--ac)}.mu{color:var(--mu)}
+.br{display:flex;align-items:center;gap:10px;margin:5px 0}.br i{flex:0 0 250px;font-style:normal;font-size:13px}.br div{height:20px;border-radius:2px;min-width:2px}.br em{font-style:normal;color:var(--mu);font-size:12px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:18px}
+.hm td{text-align:center;color:#fff;font-weight:500}.note{color:var(--mu);font-size:12px;border-top:1px solid var(--ln);margin-top:26px;padding-top:10px;max-width:90ch}
+.pill{padding:2px 8px;border-radius:10px;font-size:12px;border:1px solid}.memo{background:var(--pn);border:1px solid var(--ln);padding:22px 26px;max-width:80ch;border-radius:6px}.memo h2{margin-top:14px;font-size:16px}
+@media(max-width:600px){.br i{flex-basis:110px}}
+</style></head><body>
+<header><h1>LBO Screening Engine</h1><p>Take-private screen of 25 listed Indian companies. Values in ₹ Cr unless stated. Every input on the Assumptions tab recalculates the whole workbook.</p></header>
+<nav id="nv"></nav><main id="mn"></main>
+<script>
+const D=[{"n":"Waaree Renewables","s":"Renewable Energy","i":"Solar EPC","o":"Private Promoter","mc":8690.61,"ev":8447.08,"fcf":232.33,"op":682.88,"opm":19.29,"db":114.9,"ca":358.43,"roce":84.98,"ipo":"No"},{"n":"GE Power India","s":"Industrials","i":"Power Equipment & Services","o":"MNC Subsidiary","mc":4415.12,"ev":4002.29,"fcf":467.23,"op":304.2,"opm":23.56,"db":17.59,"ca":430.42,"roce":81.99,"ipo":"No"},{"n":"Tata Consultancy Services (TCS)","s":"Information Technology","i":"IT Services","o":"Private Promoter","mc":751657.69,"ev":750032.69,"fcf":48013.0,"op":74079.0,"opm":26.85,"db":11283.0,"ca":12908.0,"roce":63.03,"ipo":"No"},{"n":"Castrol India","s":"Energy","i":"Lubricants","o":"MNC Subsidiary","mc":19965.4,"ev":19155.67,"fcf":995.89,"op":1514.13,"opm":24.35,"db":53.15,"ca":862.88,"roce":60.27,"ipo":"No"},{"n":"Swaraj Engines","s":"Consumer Discretionary","i":"Auto Components (Tractor Engines)","o":"Corporate Subsidiary","mc":4303.98,"ev":4184.2,"fcf":47.21,"op":281.78,"opm":13.35,"db":2.05,"ca":121.83,"roce":58.38,"ipo":"No"},{"n":"Sanofi India","s":"Healthcare","i":"Pharmaceuticals","o":"MNC Subsidiary","mc":7141.84,"ev":6787.84,"fcf":413.0,"op":482.6,"opm":26.73,"db":14.7,"ca":368.7,"roce":57.51,"ipo":"No"},{"n":"Crizac","s":"Consumer Discretionary","i":"Education Services (Student Recruitment)","o":"Private Promoter","mc":3097.2,"ev":2934.0,"fcf":127.25,"op":285.68,"opm":27.63,"db":1.84,"ca":165.04,"roce":52.34,"ipo":"Yes"},{"n":"Emmvee Photovoltaic Power","s":"Renewable Energy","i":"Solar Modules","o":"Private Promoter","mc":21957.7,"ev":21964.11,"fcf":-439.74,"op":1931.98,"opm":34.64,"db":360.06,"ca":353.65,"roce":44.62,"ipo":"Yes"},{"n":"GK Energy","s":"Renewable Energy","i":"Solar Pumps / EPC","o":"Private Promoter","mc":2463.21,"ev":2222.59,"fcf":-42.37,"op":329.77,"opm":18.93,"db":202.66,"ca":443.28,"roce":40.87,"ipo":"Yes"},{"n":"Canara Robeco AMC","s":"Financials","i":"Asset Management","o":"Government-linked (PSU bank JV)","mc":4511.8,"ev":4527.2,"fcf":166.21,"op":303.24,"opm":63.44,"db":17.59,"ca":2.19,"roce":40.11,"ipo":"Yes"},{"n":"National Aluminium Co (NALCO)","s":"Materials","i":"Aluminium","o":"Government","mc":63868.83,"ev":55520.92,"fcf":4413.49,"op":9153.04,"opm":47.33,"db":59.83,"ca":8407.74,"roce":39.59,"ipo":"No"},{"n":"Waaree Energies","s":"Renewable Energy","i":"Solar Modules","o":"Private Promoter","mc":71130.37,"ev":67614.62,"fcf":-3208.53,"op":6351.23,"opm":21.14,"db":3212.62,"ca":6728.37,"roce":38.45,"ipo":"Yes"},{"n":"Oswal Pumps","s":"Renewable Energy","i":"Solar Pumps","o":"Private Promoter","mc":3073.57,"ev":2920.22,"fcf":-213.42,"op":447.47,"opm":22.11,"db":237.48,"ca":390.83,"roce":38.24,"ipo":"Yes"},{"n":"Force Motors","s":"Consumer Discretionary","i":"Automobiles","o":"Private Promoter","mc":22524.77,"ev":21693.18,"fcf":760.75,"op":1478.91,"opm":16.08,"db":0.0,"ca":831.59,"roce":36.05,"ipo":"No"},{"n":"Indraprastha Medical Corp","s":"Healthcare","i":"Hospitals","o":"Corporate Subsidiary","mc":3306.67,"ev":3080.23,"fcf":107.79,"op":273.58,"opm":17.96,"db":36.86,"ca":263.3,"roce":35.75,"ipo":"No"},{"n":"Life Insurance Corp of India (LIC)","s":"Financials","i":"Life Insurance","o":"Government","mc":506948.56,"ev":434935.39,"fcf":-27180.77,"op":47092.29,"opm":4.74,"db":0.0,"ca":72013.17,"roce":35.14,"ipo":"No"},{"n":"Coal India","s":"Energy","i":"Coal Mining","o":"Government","mc":262840.38,"ev":224338.19,"fcf":30783.14,"op":40789.08,"opm":25.84,"db":14072.18,"ca":52574.37,"roce":34.97,"ipo":"No"},{"n":"Chennai Petroleum Corp (CPCL)","s":"Energy","i":"Oil Refining","o":"Government","mc":21074.8,"ev":21782.19,"fcf":2045.05,"op":6213.42,"opm":8.15,"db":1964.16,"ca":1256.77,"roce":34.94,"ipo":"No"},{"n":"Sharda Motor","s":"Consumer Discretionary","i":"Auto Components","o":"Private Promoter","mc":5492.26,"ev":5446.56,"fcf":323.64,"op":422.88,"opm":11.58,"db":49.15,"ca":94.85,"roce":34.47,"ipo":"No"},{"n":"eClerx Services","s":"Information Technology","i":"IT-Enabled Services (KPO)","o":"Private Promoter","mc":17503.31,"ev":17150.27,"fcf":755.59,"op":1095.98,"opm":25.28,"db":384.95,"ca":737.99,"roce":34.42,"ipo":"No"},{"n":"Bombay Burmah Trading Corp","s":"Diversified","i":"Tea & Diversified Holding","o":"Private Promoter","mc":9908.63,"ev":10656.25,"fcf":2287.34,"op":3520.29,"opm":17.68,"db":1590.43,"ca":842.81,"roce":32.98,"ipo":"No"},{"n":"DDev Plastiks Industries","s":"Materials","i":"Plastics & Polymers","o":"Private Promoter","mc":2625.73,"ev":2639.18,"fcf":-11.12,"op":305.03,"opm":9.63,"db":56.83,"ca":43.38,"roce":31.02,"ipo":"Verify"},{"n":"Vikram Solar","s":"Renewable Energy","i":"Solar Modules","o":"Private Promoter","mc":5812.22,"ev":5437.21,"fcf":384.03,"op":800.44,"opm":15.3,"db":616.96,"ca":991.97,"roce":30.56,"ipo":"Yes"},{"n":"HCL Technologies","s":"Information Technology","i":"IT Services","o":"Private Promoter","mc":338651.83,"ev":320441.83,"fcf":18576.0,"op":27539.0,"opm":20.49,"db":5215.0,"ca":23425.0,"roce":30.4,"ipo":"No"},{"n":"MSTC","s":"Industrials","i":"Trading & E-Auction Services","o":"Government","mc":5035.73,"ev":3853.15,"fcf":-49.97,"op":233.48,"opm":60.41,"db":145.0,"ca":1327.58,"roce":30.28,"ipo":"No"}];
+const S={tab:0,sel:null,cap:25000,prem:25,fee:2,lev:3,sen:75,rs:10,rj:13,tax:25.17,hold:5,g:8,opm:15,fc:50,ro:20,nd:3,evx:15,mode:'abs',sb:20,sd:10,w:15};
+const TABS=['Assumptions','Funnel','LBO engine','Scenarios','Ranking','IC memo'];
+const f1=x=>x.toLocaleString('en-IN',{maximumFractionDigits:0}),pc=x=>Number.isFinite(x)?(x*100).toFixed(1)+'%':'n.m.',xx=x=>Number.isFinite(x)?x.toFixed(1)+'x':'n.m.';
+const SC=k=>k=='d'?{g:S.g-3,mb:-200,xd:-1}:k=='u'?{g:S.g+2,mb:100,xd:.5}:{};
+const IN=(k,l,st=1)=>`<label>${l}<input type=number step=${st} value=${S[k]} onchange="S.${k}=+this.value;R()"></label>`;
+const s0=c=>{const r=[];if(c.ev>S.cap)r.push('EV above cap');if(c.o.startsWith('Government'))r.push('Government-owned');if(c.s=='Financials')r.push('Financial');return r};
+function model(c,o={}){
+ const g=(o.g??S.g)/100,lev=o.lev??S.lev,N=S.hold,mb=(o.mb||0)/1e4,xd=o.xd||0;
+ const eq=c.mc*(1+S.prem/100),eev=eq+c.db-c.ca,m0=eev/c.op,fees=S.fee/100*eev,uses=eq+c.db+fees;
+ const sd=lev*S.sen/100*c.op,jd=lev*(1-S.sen/100)*c.op,sponRaw=uses-sd-jd-c.ca;
+ const nm=sponRaw<0.05*uses;// sponsor cheque too thin (or negative) for debt sized this way - not a workable capital structure
+ const spon=Math.max(sponRaw,1);
+ const conv=Math.min(Math.max(c.fcf/c.op,0),1),mg=c.opm/100;let sb=sd,jb=jd,rows=[],mn=99,l2=0;
+ for(let t=1;t<=N;t++){const e=c.op/mg*Math.pow(1+g,t)*(mg+mb),int=sb*S.rs/100+jb*S.rj/100;
+  let pay=e*conv-int*(1-S.tax/100);if(pay<0){sb-=pay;pay=0}
+  const ps=Math.min(pay,sb);sb-=ps;jb-=Math.min(pay-ps,jb);const cov=int>0?e/int:99;mn=Math.min(mn,cov);if(t==2)l2=(sb+jb)/e;rows.push({t,e,int,sb,jb,cov})}
+ const eN=rows[N-1].e,xm=(o.xm??m0)+xd,xev=xm*eN,xeq=xev-sb-jb;
+ const moic=nm?NaN:xeq/spon,irr=nm?NaN:(xeq>0?Math.pow(moic,1/N)-1:-1);
+ const a=(eN-c.op)*m0,b=xd*eN;
+ return{eq,eev,m0,fees,uses,sd,jd,spon,sponRaw,nm,rows,eN,xm,xev,xeq,moic,irr,mn,l2,a,b,cc:xeq-spon-a-b,flag:nm||l2>6||mn<1.5}}
+function pipe(){
+ const R0=D.map((c,i)=>({c,i,x:c.ev/c.op,cv:c.fcf/c.op,nd:(c.db-c.ca)/c.op,why:''}));
+ const v=R0.filter(r=>!s0(r.c).length).map(r=>r.x).sort((a,b)=>a-b),med=v.length?(v[v.length>>1]+v[(v.length-1)>>1])/2:0,cap=S.mode=='med'?med:S.evx;
+ const st=[['Stage 0: deal feasibility',r=>s0(r.c).join(', ')],['EBITDA margin > '+S.opm+'%',r=>r.c.opm>S.opm?'':'margin '+r.c.opm.toFixed(1)+'%'],
+ ['FCF conversion > '+S.fc+'%',r=>r.cv*100>S.fc?'':'FCF conv '+(r.cv*100).toFixed(0)+'%'],['ROCE > '+S.ro+'%',r=>r.c.roce>S.ro?'':'ROCE '+r.c.roce.toFixed(0)+'%'],
+ ['EV/EBITDA below '+xx(cap)+(S.mode=='med'?' (peer median)':''),r=>r.x<cap?'':'EV/EBITDA '+xx(r.x)],['Net debt/EBITDA < '+S.nd+'x',r=>r.nd<S.nd?'':'ND/EBITDA '+xx(r.nd)]];
+ let al=R0.slice();const ct=[['Universe',al.length]];
+ st.forEach(([n,f])=>{al=al.filter(r=>{const w=f(r);if(w){r.why=n+' ('+w+')';return false}return true});ct.push([n,al.length])});
+ return{R0,al,ct,med}}
+function rank(){
+ const L=pipe().al.map(r=>({r,b:model(r.c),d:model(r.c,SC('d')),u:model(r.c,SC('u'))}));
+ const ok=L.filter(l=>Number.isFinite(l.b.irr)&&Number.isFinite(l.d.irr));
+ if(ok.length){
+  const n=(k,inv)=>{const v=ok.map(k),lo=Math.min(...v),hi=Math.max(...v);return v.map(y=>hi==lo?50:100*(inv?hi-y:y-lo)/(hi-lo))};
+  const a=n(l=>l.b.irr),b=n(l=>l.d.irr),c=n(l=>Math.min(l.r.cv,1)),d=n(l=>l.r.c.roce),e=n(l=>l.r.x,1);
+  ok.forEach((l,i)=>{l.sc=.35*a[i]+.25*b[i]+.2*c[i]+.1*d[i]+.1*e[i];l.cl=l.b.irr*100>=S.sb&&l.d.irr*100>=S.sd?'Strong Buy':l.b.irr*100>=S.w?'Watch':'Pass'});
+ }
+ L.forEach(l=>{if(!Number.isFinite(l.sc)){l.sc=-1;l.cl='n.m.'}});
+ return L.sort((x,y)=>y.sc-x.sc)}
+const CL={'Strong Buy':'var(--gr)',Watch:'var(--ac)',Pass:'var(--rd)','n.m.':'var(--mu)'};
+const pill=t=>`<span class=pill style="color:${CL[t]}">${t}</span>`;
+const bar=(l,v,mx,col,t)=>`<div class=br><i>${l}</i><div style="width:${Math.max(2,Math.abs(v)/mx*55)}%;background:${col}"></div><em>${t}</em></div>`;
+const heat=(rh,ch,fn)=>`<div class=w><table class=hm><tr><th></th>${ch.map(x=>`<th>${x[0]}</th>`).join('')}</tr>${rh.map(r=>`<tr><th>${r[0]}</th>${ch.map(c=>{const i=fn(r[1],c[1]);const ok=Number.isFinite(i);const bg=ok?`hsl(${Math.max(0,Math.min(1,(i+.05)/.35))*125} 50% 26%)`:'var(--pn2)';return`<td style="background:${bg}" title="${ok?'':'Sponsor equity too thin at this leverage for a meaningful IRR'}">${pc(i)}</td>`}).join('')}</tr>`).join('')}</table></div>`;
+const M=t=>`<p class=note><b>Methodology.</b> ${t}</p>`;
+function p0(){const P=pipe(),L=rank(),t=L[0];
+ return`<div class=kp><div class=k><b>${D.length}</b><span>companies screened</span></div><div class=k><b>${P.ct[1][1]}</b><span>pass Stage 0</span></div><div class=k><b>${P.al.length}</b><span>final shortlist</span></div><div class=k><b class=a>${t?t.r.c.n.split(' (')[0]:'None'}</b><span>top pick${t?' - base IRR '+pc(t.b.irr)+', '+xx(t.b.moic)+' MOIC':''}</span></div></div>
+ <h2>Deal assumptions</h2><div class=as>${IN('prem','Control premium (%)')}${IN('fee','Fees (% of EV)',.5)}${IN('lev','Entry leverage (x EBITDA, max 5)',.25)}${IN('sen','Senior share of debt (%)',5)}${IN('rs','Senior rate (%)',.5)}${IN('rj','Junior rate (%)',.5)}${IN('tax','Tax rate (%)',.01)}${IN('hold','Holding period (yrs, 3-7)')}${IN('g','Revenue growth (%)',.5)}${IN('cap','Stage 0 EV cap (₹ Cr)',1000)}</div>
+ <h2>Screening thresholds</h2><div class=as>${IN('opm','EBITDA margin >(%)')}${IN('fc','FCF conversion >(%)',5)}${IN('ro','ROCE >(%)')}${IN('nd','Net debt/EBITDA <(x)',.5)}${IN('evx','EV/EBITDA below (x)',.5)}<label>EV/EBITDA rule<select onchange="S.mode=this.value;R()"><option value=abs ${S.mode=='abs'?'selected':''}>Absolute cap</option><option value=med ${S.mode=='med'?'selected':''}>Below peer median</option></select></label>${IN('sb','Strong Buy: base IRR >=(%)')}${IN('sd','Strong Buy: downside IRR >=(%)')}${IN('w','Watch: base IRR >=(%)')}</div>
+ ${M('EBITDA = OP 12M; revenue = OP / OPM; net debt = debt - cash. Entry equity = market cap x (1 + premium); existing cash funds part of the deal. Debt is sized on EBITDA, swept 100% from cash flow after tax-adjusted interest (senior first). FCF each year = EBITDA x FCF conversion (0-100%). Exit multiple = entry multiple. IRR = MOIC^(1/years) - 1 with no interim dividends.')}`}
+function p1(){const P=pipe(),m=P.ct[0][1];
+ return`<h2>Screening funnel</h2>${P.ct.map((c,i)=>bar(c[0],c[1],m,i?'var(--ac)':'var(--pn2)',c[1]+' companies')).join('')}
+ <h2>Eliminated companies</h2><div class=w><table><tr><th>Company</th><th>EV ₹ Cr</th><th>EV/EBITDA</th><th>Removed at</th></tr>${P.R0.filter(r=>r.why).map(r=>`<tr><td>${r.c.n}</td><td>${f1(r.c.ev)}</td><td>${xx(r.x)}</td><td style="text-align:left" class=mu>${r.why}</td></tr>`).join('')}</table></div>
+ <h2>Data-quality flags (shortlist)</h2><div class=w><table><tr><th>Company</th><th>FCF conv.</th><th>Flags</th></tr>${P.al.map(r=>{const f=[];if(r.c.fcf<0)f.push('negative FCF');if(r.c.ipo=='Yes')f.push('under 3 yrs listed');if(r.cv>1)f.push('FCF above EBITDA (capped at 100%)');if(r.c.o!='Private Promoter')f.push(r.c.o+' - parent consent needed');return`<tr><td>${r.c.n}</td><td>${pc(r.cv)}</td><td style="text-align:left" class="${f.length?'a':'g'}">${f.join('; ')||'none'}</td></tr>`}).join('')}</table></div>
+ ${M('Filters run in sequence; a company is listed once, at the first filter it fails. The absolute EV/EBITDA cap is the default because a peer-median rule leaves a shortlist of one in this universe; switch it on the Assumptions tab.')}`}
+function p2(){if(S.sel==null)S.sel=(rank()[0]||{r:{i:0}}).r.i;const c=D[S.sel],m=model(c),w=s0(c);
+ const T=(a)=>a.map(r=>`<tr><td>${r[0]}</td><td>${f1(r[1])}</td></tr>`).join('');
+ return`<h2>LBO engine</h2><label style="max-width:360px">Company<select onchange="S.sel=+this.value;R()">${D.map((x,i)=>`<option value=${i} ${i==S.sel?'selected':''}>${x.n}</option>`).join('')}</select></label>
+ ${w.length?`<p class=a>Fails Stage 0 (${w.join(', ')}). Shown for reference only.</p>`:''}
+ ${m.nm?`<p class=r>IRR/MOIC shown as "n.m." - at this leverage, debt plus existing cash covers nearly all of the purchase price, leaving sponsor equity of only ~₹${f1(Math.max(m.sponRaw,0))} Cr (or negative). That is not a workable capital structure, not a real return. Lower the leverage slider on the Assumptions tab.</p>`:''}
+ <div class=kp><div class=k><b>${pc(m.irr)}</b><span>IRR</span></div><div class=k><b>${xx(m.moic)}</b><span>MOIC</span></div><div class=k><b>${xx(m.m0)}</b><span>entry EV/EBITDA (incl. premium)</span></div><div class=k><b class="${m.flag?'r':'g'}">${m.flag?'Breach':'Clear'}</b><span>debt/EBITDA yr 2 ${xx(m.l2)}; min cover ${xx(m.mn)}</span></div></div>
+ <div class=two><div><h2>Sources & uses (₹ Cr)</h2><table>${T([['Uses: equity purchase price',m.eq],['Uses: refinance existing debt',c.db],['Uses: fees',m.fees],['Total uses',m.uses],['Source: senior debt',m.sd],['Source: junior debt',m.jd],['Source: balance-sheet cash',c.ca],['Source: sponsor equity',m.spon]])}</table></div>
+ <div><h2>Returns attribution (₹ Cr)</h2>${bar('EBITDA growth',m.a,Math.max(Math.abs(m.a),Math.abs(m.b),Math.abs(m.cc),1),m.a>=0?'var(--gr)':'var(--rd)',f1(m.a))}${bar('Multiple change',m.b,Math.max(Math.abs(m.a),Math.abs(m.b),Math.abs(m.cc),1),'var(--ac)',f1(m.b))}${bar('Debt paydown, cash & fees',m.cc,Math.max(Math.abs(m.a),Math.abs(m.b),Math.abs(m.cc),1),m.cc>=0?'var(--gr)':'var(--rd)',f1(m.cc))}<p class=mu>Exit EV ${f1(m.xev)} at ${xx(m.xm)}; exit equity ${f1(m.xeq)}.</p></div></div>
+ <h2>Projection and debt schedule (₹ Cr)</h2><div class=w><table><tr><th>Year</th><th>EBITDA</th><th>Interest</th><th>Senior debt</th><th>Junior debt</th><th>EBITDA / interest</th></tr>${m.rows.map(r=>`<tr><td>${r.t}</td><td>${f1(r.e)}</td><td>${f1(r.int)}</td><td>${f1(r.sb)}</td><td>${f1(r.jb)}</td><td>${xx(r.cov)}</td></tr>`).join('')}</table></div>
+ ${M('Sponsor equity is the plug. If cash flow after interest is negative, the shortfall is drawn on senior debt. Attribution: EBITDA growth = change in EBITDA x entry multiple; multiple change = exit less entry multiple x exit EBITDA; the remainder is debt paydown, released cash and fees.')}`}
+function p3(){const c=D[S.sel??0],lv=[2,2.5,3,4,5],xs=[-2,-1,0,1,2],gs=[2,5,8,11,14],ms=[-300,-150,0,150,300];
+ const rows=[['Base','b'],['Downside','d'],['Upside','u']].map(([n,k])=>{const m=model(c,SC(k));return`<tr><td>${n}</td><td>${pc(m.irr)}</td><td>${xx(m.moic)}</td><td>${xx(m.l2)}</td><td>${xx(m.mn)}</td><td class="${m.flag?'r':'g'}">${m.flag?'Breach':'Clear'}</td></tr>`}).join('');
+ return`<h2>Scenarios: ${c.n}</h2><p class=mu>Change the company on the LBO engine tab.</p><div class=w><table><tr><th>Scenario</th><th>IRR</th><th>MOIC</th><th>Debt/EBITDA yr 2</th><th>Min. cover</th><th>Flag</th></tr>${rows}</table></div>
+ <p class=mu>Downside: growth -3 pts, margin -200 bps, exit multiple -1.0x. Upside: growth +2 pts, margin +100 bps, exit multiple +0.5x. Flag: debt/EBITDA above 6.0x after year 2, or EBITDA/interest below 1.5x.</p>
+ <div class=two><div><h2>IRR: exit multiple change vs entry leverage</h2>${heat(xs.map(x=>[(x>0?'+':'')+x+'x',x]),lv.map(l=>[xx(l),l]),(x,l)=>model(c,{xd:x,lev:l}).irr)}</div>
+ <div><h2>IRR: revenue growth vs margin change</h2>${heat(gs.map(g=>[g+'%',g]),ms.map(m=>[(m>0?'+':'')+m+' bps',m]),(g,m)=>model(c,{g,mb:m}).irr)}</div></div>${M('Each cell reruns the full LBO with that single change; all other inputs stay at the Assumptions values.')}`}
+function p4(){const L=rank();if(!L.length)return'<h2>Ranking</h2><p>No company passes all filters. Loosen the thresholds on the Assumptions tab.</p>';
+ return`<h2>Ranked shortlist</h2><div class=w><table><tr><th>#</th><th>Company</th><th>EV/EBITDA</th><th>Leverage</th><th>Base IRR</th><th>Downside IRR</th><th>MOIC</th><th>Score</th><th>Class</th></tr>${L.map((l,i)=>`<tr><td>${i+1}</td><td>${l.r.c.n}</td><td>${xx(l.r.x)}</td><td>${xx(S.lev)}</td><td>${pc(l.b.irr)}</td><td>${pc(l.d.irr)}</td><td>${xx(l.b.moic)}</td><td>${l.sc.toFixed(0)}</td><td>${pill(l.cl)}</td></tr>`).join('')}</table></div>
+ <h2>Base vs downside IRR</h2>${L.map(l=>bar(l.r.c.n.split(' (')[0]+' - base',l.b.irr,.4,CL[l.cl],pc(l.b.irr))+bar('downside',l.d.irr,.4,'var(--pn2)',pc(l.d.irr))).join('')}
+ ${M('Score = 35% base IRR + 25% downside IRR + 20% FCF conversion + 10% ROCE + 10% entry valuation (lower EV/EBITDA scores higher), each scaled 0-100 within the shortlist. Because scaling is relative, scores compare names within this list only.')}`}
+function p5(){const L=rank(),t=L[0];if(!t)return'<h2>IC memo</h2><p>No shortlisted company to write up.</p>';const c=t.r.c,b=t.b;
+ return`<div class=memo><h1>Investment committee memo</h1><p class=mu>${c.n} | ${c.s}, ${c.i} | Recommendation: ${pill(t.cl)}</p>
+ <h2>Overview</h2><p>${c.n} is a ${c.o.toLowerCase()} company in ${c.i.toLowerCase()} with market cap ₹${f1(c.mc)} Cr and LTM EBITDA of ₹${f1(c.op)} Cr (${c.opm.toFixed(1)}% margin). It holds net cash of ₹${f1(c.ca-c.db)} Cr.</p>
+ <h2>Thesis</h2><p>1. Cash generation: FCF is ${pc(t.r.cv)} of EBITDA, which funds debt paydown.<br>2. Quality: ROCE of ${c.roce.toFixed(0)}% and a ${c.opm.toFixed(1)}% margin.<br>3. Valuation: ${xx(t.r.x)} EV/EBITDA today, ${xx(b.m0)} after a ${S.prem}% premium.</p>
+ <h2>Returns (${S.hold}-year hold, ${xx(S.lev)} leverage)</h2><p>Base ${pc(b.irr)} IRR / ${xx(b.moic)} MOIC. Downside ${pc(t.d.irr)} / ${xx(t.d.moic)}. Upside ${pc(t.u.irr)} / ${xx(t.u.moic)}. Sponsor equity ₹${f1(b.spon)} Cr.</p>
+ <h2>Key risks</h2><p>1. Execution of a take-private: ${c.o=='Private Promoter'?'promoter agreement and SEBI delisting thresholds':'parent consent and SEBI delisting thresholds'}.<br>2. Simplified model: no capex, D&A or working-capital detail; FCF is a last-fiscal-year figure.<br>3. Financing: acquisition debt for Indian buyouts is constrained, so ${xx(S.lev)} leverage is an assumption to verify.</p>
+ <h2>Recommendation</h2><p>${t.cl=='Strong Buy'?'Proceed to detailed diligence.':t.cl=='Watch'?'Keep on watchlist; returns are below the Strong Buy bar.':'Do not proceed at current assumptions.'}</p></div>`}
+function R(){$('nv').innerHTML=TABS.map((t,i)=>`<button class="${i==S.tab?'on':''}" onclick="S.tab=${i};R()">${t}</button>`).join('');$('mn').innerHTML=[p0,p1,p2,p3,p4,p5][S.tab]()}
+const $=id=>document.getElementById(id);R();
+</script></body></html>
